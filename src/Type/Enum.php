@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Type;
 
@@ -45,7 +45,7 @@ abstract class Enum
 		return $this->value;
 	}
 
-	public function equals(self $enum): bool
+	public function equals(self $enum)
 	{
 		if (get_class($this) !== get_class($enum)) {
 			throw new InvalidEnumTypeException($enum, get_class($this));
@@ -54,7 +54,7 @@ abstract class Enum
 		return $this->equalsValue($enum->getValue());
 	}
 
-	public function equalsValue($value): bool
+	public function equalsValue($value)
 	{
 		self::checkValue($value);
 
@@ -65,12 +65,12 @@ abstract class Enum
 	 * @param mixed $value
 	 * @return bool
 	 */
-	private static function isValidValue($value): bool
+	private static function isValidValue($value)
 	{
 		return in_array($value, self::getAvailableValues(), true);
 	}
 
-	private static function getAvailableValues(): array
+	private static function getAvailableValues()
 	{
 		$index = get_called_class();
 		if (!isset(self::$availableValues[$index])) {

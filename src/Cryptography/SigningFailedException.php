@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Cryptography;
 
@@ -17,7 +17,7 @@ class SigningFailedException extends \Exception
 		$this->data = $data;
 	}
 
-	public function getData(): array
+	public function getData()
 	{
 		return $this->data;
 	}

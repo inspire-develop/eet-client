@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -139,24 +139,24 @@ class Receipt
 	private $priceUsedSubsequentSettlement;
 
 	public function __construct(
-		bool $firstSend,
-		string $delegatedVatId = null,
-		string $receiptNumber,
+		$firstSend,
+		$delegatedVatId = null,
+		$receiptNumber,
 		\DateTimeImmutable $receiptTime,
-		int $totalPrice = 0,
-		int $priceZeroVat = null,
-		int $priceStandardVat = null,
-		int $vatStandard = null,
-		int $priceFirstReducedVat = null,
-		int $vatFirstReduced = null,
-		int $priceSecondReducedVat = null,
-		int $vatSecondReduced = null,
-		int $priceTravelService = null,
-		int $priceUsedGoodsStandardVat = null,
-		int $priceUsedGoodsFirstReduced = null,
-		int $priceUsedGoodsSecondReduced = null,
-		int $priceSubsequentSettlement = null,
-		int $priceUsedSubsequentSettlement = null
+		$totalPrice = 0,
+		$priceZeroVat = null,
+		$priceStandardVat = null,
+		$vatStandard = null,
+		$priceFirstReducedVat = null,
+		$vatFirstReduced = null,
+		$priceSecondReducedVat = null,
+		$vatSecondReduced = null,
+		$priceTravelService = null,
+		$priceUsedGoodsStandardVat = null,
+		$priceUsedGoodsFirstReduced = null,
+		$priceUsedGoodsSecondReduced = null,
+		$priceSubsequentSettlement = null,
+		$priceUsedSubsequentSettlement = null
 	)
 	{
 		$this->uuid = \Ramsey\Uuid\Uuid::uuid4();
@@ -180,12 +180,12 @@ class Receipt
 		$this->priceUsedSubsequentSettlement = $priceUsedSubsequentSettlement;
 	}
 
-	public function getUuid(): \Ramsey\Uuid\Uuid
+	public function getUuid()
 	{
 		return $this->uuid;
 	}
 
-	public function isFirstSend(): bool
+	public function isFirstSend()
 	{
 		return $this->firstSend;
 	}
@@ -198,17 +198,17 @@ class Receipt
 		return $this->delegatedVatId;
 	}
 
-	public function getReceiptNumber(): string
+	public function getReceiptNumber()
 	{
 		return $this->receiptNumber;
 	}
 
-	public function getReceiptTime(): \DateTimeImmutable
+	public function getReceiptTime()
 	{
 		return $this->receiptTime;
 	}
 
-	public function getTotalPrice(): int
+	public function getTotalPrice()
 	{
 		return $this->totalPrice;
 	}

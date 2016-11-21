@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Driver;
 
@@ -16,14 +16,14 @@ class GuzzleSoapClientDriver implements SoapClientDriver
 	/** @var float */
 	private $requestTimeout;
 
-	public function __construct(\GuzzleHttp\Client $httpClient, float $connectionTimeout = self::DEFAULT_TIMEOUT, float $requestTimeout = self::DEFAULT_TIMEOUT)
+	public function __construct(\GuzzleHttp\Client $httpClient, $connectionTimeout = self::DEFAULT_TIMEOUT, $requestTimeout = self::DEFAULT_TIMEOUT)
 	{
 		$this->httpClient = $httpClient;
 		$this->connectionTimeout = $connectionTimeout;
 		$this->requestTimeout = $requestTimeout;
 	}
 
-	public function send(string $request, string $location, string $action, int $soapVersion): string
+	public function send($request, $location, $action, $soapVersion)
 	{
 		$headers = [
 			'User-Agent: PHP',

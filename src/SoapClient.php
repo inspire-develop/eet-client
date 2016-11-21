@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -14,7 +14,7 @@ class SoapClient extends \SoapClient
 	/** @var \SlevomatEET\Driver\SoapClientDriver */
 	private $clientDriver;
 
-	public function __construct(string $wsdl, CryptographyService $cryptoService, SoapClientDriver $clientDriver)
+	public function __construct($wsdl, CryptographyService $cryptoService, SoapClientDriver $clientDriver)
 	{
 		$options = [
 			'soap_version' => SOAP_1_1,

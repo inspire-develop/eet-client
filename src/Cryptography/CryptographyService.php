@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Cryptography;
 
@@ -14,14 +14,14 @@ class CryptographyService
 	/** @var string */
 	private $publicKeyFile;
 
-	public function __construct(string $privateKeyFile, string $publicKeyFile, string $privateKeyPassword = '')
+	public function __construct($privateKeyFile, $publicKeyFile, $privateKeyPassword = '')
 	{
 		$this->privateKeyFile = $privateKeyFile;
 		$this->publicKeyFile = $publicKeyFile;
 		$this->privateKeyPassword = $privateKeyPassword;
 	}
 
-	public function getPkpCode(array $body): string
+	public function getPkpCode(array $body)
 	{
 		$values = [
 			$body['dic_popl'],
@@ -50,14 +50,14 @@ class CryptographyService
 		return $signature;
 	}
 
-	public function getBkpCode(string $pkpCode): string
+	public function getBkpCode($pkpCode)
 	{
 		$bkp = strtoupper(sha1($pkpCode));
 
 		return implode('-', str_split($bkp, 8));
 	}
 
-	public function addWSESignature(string $request): string
+	public function addWSESignature($request)
 	{
 		$securityKey = new \RobRichards\XMLSecLibs\XMLSecurityKey(\RobRichards\XMLSecLibs\XMLSecurityKey::RSA_SHA256, ['type' => 'private']);
 		$document = new \DOMDocument('1.0');

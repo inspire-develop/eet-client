@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -55,7 +55,7 @@ class EvidenceRequest
 			'cerp_zuct' => Formatter::formatAmount($receipt->getPriceUsedSubsequentSettlement()),
 			'rezim' => $configuration->getEvidenceMode()->getValue(),
 		];
-		$this->body = array_filter($body, function ($value): bool {
+		$this->body = array_filter($body, function ($value) {
 			return $value !== null;
 		});
 
@@ -63,7 +63,7 @@ class EvidenceRequest
 		$this->bkpCode = $cryptographyService->getBkpCode($this->pkpCode);
 	}
 
-	public function getRequestData(): array
+	public function getRequestData()
 	{
 		return [
 			'Hlavicka' => $this->header,
@@ -84,27 +84,27 @@ class EvidenceRequest
 		];
 	}
 
-	public function getSendDate(): \DateTimeImmutable
+	public function getSendDate()
 	{
 		return $this->sendDate;
 	}
 
-	public function getHeader(): array
+	public function getHeader()
 	{
 		return $this->header;
 	}
 
-	public function getBody(): array
+	public function getBody()
 	{
 		return $this->body;
 	}
 
-	public function getPkpCode(): string
+	public function getPkpCode()
 	{
 		return $this->pkpCode;
 	}
 
-	public function getBkpCode(): string
+	public function getBkpCode()
 	{
 		return $this->bkpCode;
 	}

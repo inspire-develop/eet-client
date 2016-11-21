@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Type;
 
@@ -11,7 +11,7 @@ class InvalidEnumTypeException extends \InvalidArgumentException
 	/** @var string */
 	private $expectedClass;
 
-	public function __construct(Enum $enum, string $expectedClass)
+	public function __construct(Enum $enum, $expectedClass)
 	{
 		parent::__construct(sprintf(
 			'Invalid enum type \'%s\'. Expected class: %s',
@@ -23,12 +23,12 @@ class InvalidEnumTypeException extends \InvalidArgumentException
 		$this->expectedClass = $expectedClass;
 	}
 
-	public function getEnum(): Enum
+	public function getEnum()
 	{
 		return $this->enum;
 	}
 
-	public function getExpectedClass(): string
+	public function getExpectedClass()
 	{
 		return $this->expectedClass;
 	}

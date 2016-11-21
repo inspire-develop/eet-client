@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Cryptography;
 
@@ -10,7 +10,7 @@ class PrivateKeyFileException extends \Exception
 	 */
 	private $privateKeyFile;
 
-	public function __construct(string $privateKeyFile, \Throwable $previous = null)
+	public function __construct($privateKeyFile, \Exception $previous = null)
 	{
 		parent::__construct(sprintf(
 			'Private key could not be loaded from file \'%s\'. Please make sure that the file contains valid private key in PEM format.',
@@ -20,7 +20,7 @@ class PrivateKeyFileException extends \Exception
 		$this->privateKeyFile = $privateKeyFile;
 	}
 
-	public function getPrivateKeyFile(): string
+	public function getPrivateKeyFile()
 	{
 		return $this->privateKeyFile;
 	}

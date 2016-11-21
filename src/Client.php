@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -28,7 +28,7 @@ class Client
 		$this->soapClientDriver = $soapClientDriver;
 	}
 
-	public function send(Receipt $receipt): EvidenceResponse
+	public function send(Receipt $receipt)
 	{
 		$request = new EvidenceRequest($receipt, $this->configuration, $this->cryptographyService);
 
@@ -48,7 +48,7 @@ class Client
 		return $response;
 	}
 
-	private function getSoapClient(): SoapClient
+	private function getSoapClient()
 	{
 		if ($this->soapClient === null) {
 			$this->soapClient = new SoapClient($this->configuration->getEvidenceEnvironment()->getWsdlPath(), $this->cryptographyService, $this->soapClientDriver);

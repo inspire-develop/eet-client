@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -14,7 +14,7 @@ class InvalidResponseReceivedException extends \Exception
 		$this->response = $response;
 	}
 
-	public function getResponse(): EvidenceResponse
+	public function getResponse()
 	{
 		return $this->response;
 	}

@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -10,12 +10,12 @@ class FormatterTest extends \PHPUnit\Framework\TestCase
 	 * @param int|null $value
 	 * @param string|null $expected
 	 */
-	public function testFormatAmount(int $value = null, string $expected = null)
+	public function testFormatAmount($value = null, $expected = null)
 	{
 		$this->assertSame($expected, Formatter::formatAmount($value));
 	}
 
-	public function dataTestFormatAmount(): array
+	public function dataTestFormatAmount()
 	{
 		return [
 			[0, '0.00'],
@@ -33,7 +33,7 @@ class FormatterTest extends \PHPUnit\Framework\TestCase
 	 * @param \DateTimeImmutable $value
 	 * @param string $expected
 	 */
-	public function testFormatDateTime(\DateTimeImmutable $value, string $expected)
+	public function testFormatDateTime(\DateTimeImmutable $value, $expected)
 	{
 		$this->assertSame($expected, Formatter::formatDateTime($value));
 	}

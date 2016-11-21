@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -14,7 +14,7 @@ class FailedRequestException extends \Exception
 		$this->requestData = $requestData;
 	}
 
-	public function getRequestData(): EvidenceRequest
+	public function getRequestData()
 	{
 		return $this->requestData;
 	}

@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET\Type;
 
@@ -43,7 +43,7 @@ class InvalidEnumValueException extends \InvalidArgumentException
 	/**
 	 * @return mixed[]
 	 */
-	public function getAvailableValues(): array
+	public function getAvailableValues()
 	{
 		return $this->availableValues;
 	}

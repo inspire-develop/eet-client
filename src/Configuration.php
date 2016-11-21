@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php
 
 namespace SlevomatEET;
 
@@ -23,7 +23,7 @@ class Configuration
 	/** @var \SlevomatEET\EvidenceEnvironment */
 	private $evidenceEnvironment;
 
-	public function __construct(string $vatId, string $premiseId, string $cashRegisterId, EvidenceEnvironment $evidenceEnvironment, bool $verificationMode = false)
+	public function __construct($vatId, $premiseId, $cashRegisterId, EvidenceEnvironment $evidenceEnvironment, $verificationMode = false)
 	{
 		$this->vatId = $vatId;
 		$this->premiseId = $premiseId;
@@ -33,32 +33,32 @@ class Configuration
 		$this->evidenceEnvironment = $evidenceEnvironment;
 	}
 
-	public function getVatId(): string
+	public function getVatId()
 	{
 		return $this->vatId;
 	}
 
-	public function getPremiseId(): string
+	public function getPremiseId()
 	{
 		return $this->premiseId;
 	}
 
-	public function getCashRegisterId(): string
+	public function getCashRegisterId()
 	{
 		return $this->cashRegisterId;
 	}
 
-	public function isVerificationMode(): bool
+	public function isVerificationMode()
 	{
 		return $this->verificationMode;
 	}
 
-	public function getEvidenceMode(): EvidenceMode
+	public function getEvidenceMode()
 	{
 		return $this->evidenceMode;
 	}
 
-	public function getEvidenceEnvironment(): EvidenceEnvironment
+	public function getEvidenceEnvironment()
 	{
 		return $this->evidenceEnvironment;
 	}
