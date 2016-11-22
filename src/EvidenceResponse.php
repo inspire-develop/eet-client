@@ -5,7 +5,7 @@ namespace SlevomatEET;
 class EvidenceResponse
 {
 
-	/** @var array */
+	/** @var \stdClass */
 	private $rawData;
 
 	/** @var string|null */

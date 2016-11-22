@@ -8,7 +8,7 @@ class Receipt
 	/**
 	 * XML uuid_zpravy
 	 *
-	 * @var \Ramsey\Uuid\Uuid
+	 * @var \Ramsey\Uuid\UuidInterface
 	 */
 	private $uuid;
 
